@@ -1,0 +1,17 @@
+.main {
+    // Main blocks
+    &-wrap {
+    }
+
+    // Top
+    &-top__title {
+        font-weight: 600;
+        line-height: 56px;
+        letter-spacing: normal;
+
+        @media (max-width: $sm) {
+            line-height: normal;
+
+        }
+    }
+}

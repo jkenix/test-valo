@@ -1,0 +1,191 @@
+// Base selectors
+html {
+    font-size: 1rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $dark;
+    font-family: $main-font;
+    font-size: 1rem;
+    background-color: $bg-gray;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $main-font;
+    font-weight: 400;
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: $dark;
+    letter-spacing: normal;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 25px 0;
+}
+
+p {
+    font-family: $main-font;
+    margin: 25px 0;
+
+    font-size: 1.15rem;
+    word-break: break-word;
+    font-weight: 400;
+
+    &:first-child {
+        margin-top: 0px;
+    }
+}
+
+span {
+    font-family: $main-font;
+    font-weight: 400;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: $main-font;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    &:focus-visible {
+        outline: 1px solid $dark;
+    }
+}
+
+select,
+input {
+    outline: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+strong {
+    font-weight: 700;
+}
+
+hr,
+img {
+    border: none;
+}
+
+ul {
+    font-size: 1rem;
+    font-family: $main-font;
+
+    list-style: none;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+
+    word-break: break-word;
+    font-weight: 400;
+
+    @media (min-width: $md) {
+        font-size: 1.15rem;
+    }
+}
+
+ol {
+    font-size: 1.15rem;
+    font-family: $main-font;
+    list-style-position: inside;
+}
+
+// iframe {
+//     max-width: 100%;
+
+//     @media (max-width: $lg) {
+//         height: 450px;
+//     }
+// }
+
+// pre {
+//     margin: 0;
+// }
+
+// Links
+a {
+    font-family: $main-font;
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 3px solid $dark;
+}
+
+// Animation
+
+// Layout
+
+.container {
+    box-sizing: border-box;
+
+    // Увеличить отступ, если в классе пусты <p> или их нет
+    &:has(.row:empty) {
+        margin: 0;
+    }
+
+    @media (min-width: $xxxl) {
+        max-width: 1400px;
+    }
+
+    @media (max-width: $xl) and (min-width: $lg) {
+        max-width: 919px;
+    }
+
+    @media (max-width: $sm) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.col-lg-4_5 {
+    @media (min-width: $lg) {
+        width: 37.3%;
+    }
+}
+
+// .container-fluid {
+//     --bs-gutter-x: unset;
+//     --bs-gutter-y: unset;
+// }
+
+// Img
+
+.img-responsive {
+    width: auto;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}

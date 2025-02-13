@@ -1,0 +1,349 @@
+.infrastructure {
+    background-color: $bg-gray;
+
+    // Layout main cols
+    &__content {
+        padding-top: 15px;
+        padding-bottom: 142px;
+
+        @media (max-width: $xl) {
+            padding-top: 23px;
+            padding-bottom: 29px;
+        }
+    }
+
+    &__elements {
+        row-gap: 25px;
+        margin: 0;
+
+        @media (max-width: $xl) {
+            row-gap: 15px;
+        }
+
+        @media (max-width: $lg) {
+            row-gap: 10px;
+        }
+
+        @media (max-width: $xl) and (min-width: $sm) {
+            div[class^="col"] {
+                padding-right: calc(var(--bs-gutter-x) * 0.4);
+                padding-left: calc(var(--bs-gutter-x) * 0.4);
+            }
+        }
+    }
+
+    // Content
+
+    // Top
+    &__top {
+        margin: 0 0 47px;
+
+        @media (max-width: $sm) {
+            @include row;
+
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            margin: 0 0 25px;
+        }
+    }
+
+    &__top-number {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: $white;
+
+        @media (max-width: $sm) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__top-title {
+        margin: 0;
+
+        @media (min-width: $xl) {
+            font-size: 3rem;
+        }
+
+        @media (max-width: $xl) and (min-width: $lg) {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: $lg) and (min-width: $sm) {
+            font-size: 2rem;
+        }
+
+        @media (max-width: $sm) {
+            font-size: 1.5rem;
+        }
+    }
+
+    // Cols
+    &-link {
+        border-radius: $border-rad-inf;
+        background-color: $bg-white;
+
+        display: flex;
+
+        position: relative;
+
+        transition: all 0.1s;
+
+        &:hover {
+            text-decoration: none;
+
+            .infrastructure-link__content {
+                background: $bg-blue;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            .infrastructure-link__content-txt {
+                color: $white;
+            }
+        }
+    }
+
+    &-link_bg {
+        height: 280px;
+
+        @media (max-width: $xxl) {
+            height: 220px;
+        }
+
+        @media (max-width: $xl) {
+            height: 184px;
+        }
+
+        @media (max-width: $lg) {
+            height: 214px;
+        }
+
+        @media (max-width: $sm) {
+            height: 100px;
+        }
+    }
+
+    &-link__bg-col {
+        img {
+            position: absolute;
+            object-fit: cover;
+            max-width: 100%;
+            height: 100%;
+            border-radius: $border-rad-inf;
+        }
+    }
+
+    &-link__content {
+        align-items: center;
+        display: flex;
+        gap: 14px;
+
+        position: absolute;
+
+        height: 30px;
+
+        left: 24px;
+        bottom: 24px;
+
+        background: $bg-white;
+        border-radius: $border-rad-inf;
+        transition: all 0.1s;
+
+        padding: 17px 25px 17px 17px;
+
+        @media (max-width: $xl) {
+            padding: 6px 14px;
+
+            img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: $lg) {
+            gap: 8px;
+            padding: 9px 10px;
+        }
+
+        @media (max-width: $sm) {
+            padding: 10px 25px 10px 10px;
+            height: 36px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &-link__content-txt {
+        color: $dark;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-align: left;
+
+        @media (max-width: $xxl) {
+            font-size: 1rem;
+        }
+
+        @media (max-width: $xl) {
+            font-size: 0.85rem;
+        }
+    }
+
+    //    Link Icons
+    // Layout
+    &-links-icons {
+        @media (min-width: $lg) {
+            width: 62.7%;
+        }
+    }
+
+    &-links-icons__elements {
+        row-gap: 25px;
+
+        .infrastructure-link {
+            height: 127px;
+
+            @media (max-width: $xxl) {
+                height: 100px;
+            }
+
+            @media (max-width: $xl) {
+                height: 84px;
+            }
+
+            @media (max-width: $md) {
+                height: 97px;
+            }
+        }
+
+        // Media infrastructure-links-icons__elements
+        @media (max-width: $xxl) {
+            row-gap: 15px;
+        }
+
+        @media (max-width: $xl) and (min-width: $md) {
+            div[class^="col"] {
+                padding-right: calc(var(--bs-gutter-x) * 0.4);
+                padding-left: calc(var(--bs-gutter-x) * 0.4);
+            }
+        }
+
+        @media (max-width: $md) and (min-width: $sm) {
+            div[class^="col"] {
+                padding-right: calc(var(--bs-gutter-x) * 0.2);
+                padding-left: calc(var(--bs-gutter-x) * 0.2);
+            }
+        }
+
+        @media (max-width: $sm) {
+            margin: 0;
+
+            justify-content: center;
+            margin-top: 15px;
+
+            div[class*="row-block"] {
+                padding-right: calc(var(--bs-gutter-x) * 0.2);
+                padding-left: calc(var(--bs-gutter-x) * 0.2);
+            }
+        }
+    }
+
+    // Content
+    &-link_icons {
+        @media (max-width: $sm) {
+            height: calc(100% - 0px) !important;
+        }
+    }
+
+    &-link__content_icons {
+        align-items: start;
+        @include column;
+
+        position: relative;
+        left: unset;
+        right: unset;
+        bottom: unset;
+        padding: 15px 20px;
+
+        height: auto;
+        width: 100%;
+
+        @media (max-width: $xxl) {
+            row-gap: 10px;
+
+            padding: 10px 20px;
+        }
+
+        @media (max-width: $xl) {
+            padding: 15px;
+        }
+
+        @media (max-width: $sm) {
+            flex-direction: row;
+
+            padding: 10px;
+
+            column-gap: 8px;
+        }
+    }
+
+    // Fly links
+    &-link__content_fly {
+        @media (max-width: $sm) {
+            background: none;
+            height: auto !important;
+
+            .infrastructure-link__content_icons {
+                background: none !important;
+
+                flex-direction: column;
+
+                padding: 0;
+                margin: 0;
+
+                &:hover {
+                    background: none !important;
+
+                    img {
+                        filter: drop-shadow(2px 4px 6px $dark);
+                    }
+
+                    .infrastructure-link__content-txt {
+                        color: $blue;
+                    }
+                }
+            }
+
+            .infrastructure-link__content-txt_icons {
+                width: 100%;
+                text-align: center;
+            }
+
+            img {
+                background: $bg-white;
+                border-radius: $border-rad-inf;
+
+                padding: 16px 13px;
+
+                margin: 0 auto;
+            }
+        }
+    }
+
+    // Text
+    &-link__content-txt_icons {
+        @media (min-width: $xxl) {
+            font-size: 1.15rem;
+        }
+
+        @media (max-width: $sm) {
+            font-size: 0.75rem;
+        }
+    }
+}
