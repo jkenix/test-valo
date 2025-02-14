@@ -47,27 +47,24 @@ if (1) {
 	}
 
 	// заполним колонку
-	function add_thumb_value($colname, $post_id)
-	{
+	function add_thumb_value($colname, $post_id) {
 		if ('thumbnail' == $colname) {
-			$width  = $height = 45;
-
-			// миниатюра
-			if ($thumbnail_id = get_post_meta($post_id, '_thumbnail_id', true)) {
-				$thumb = wp_get_attachment_image($thumbnail_id, array($width, $height), true);
+			$width = $height = 45; // миниатюра
+			$thumbnail_id = get_post_meta($post_id, '_thumbnail_id', true);
+	
+			if ($thumbnail_id) {
+				// Проверяем существует ли прикрепленная миниатюра
+				if (get_post($thumbnail_id)) {
+					$thumb = wp_get_attachment_image($thumbnail_id, array($width, $height), true);
+				} else {
+					// Если миниатюра была удалена, обнуляем переменную
+					$thumb = '';
+				}
+			} else {
+				// Если миниатюры нет, обнуляем переменную
+				$thumb = '';
 			}
-			// из галереи...
-			elseif ($attachments = get_children(array(
-				'post_parent'    => $post_id,
-				'post_mime_type' => 'image',
-				'post_type'      => 'attachment',
-				'numberposts'    => 1,
-				'order'          => 'DESC',
-			))) {
-				$attach = array_shift($attachments);
-				$thumb = wp_get_attachment_image($attach->ID, array($width, $height), true);
-			}
-
+	
 			echo empty($thumb) ? ' ' : $thumb;
 		}
 	}

@@ -14,7 +14,6 @@
 
     &__elements {
         row-gap: 25px;
-        margin: 0;
 
         @media (max-width: $xl) {
             row-gap: 15px;
@@ -33,10 +32,16 @@
     }
 
     // Content
-
     // Top
     &__top {
-        margin: 0 0 47px;
+        margin-bottom: 25px;
+
+        @media (max-width: $xl) and (min-width: $sm) {
+            > * {
+                padding-right: calc(var(--bs-gutter-x) * 0.4);
+                padding-left: calc(var(--bs-gutter-x) * 0.4);
+            }
+        }
 
         @media (max-width: $sm) {
             @include row;
@@ -44,8 +49,6 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-
-            margin: 0 0 25px;
         }
     }
 
@@ -62,8 +65,12 @@
     &__top-title {
         margin: 0;
 
-        @media (min-width: $xl) {
+        @media (min-width: $xxl) {
             font-size: 3rem;
+        }
+
+        @media (max-width: $xxl) {
+            font-size: 2.5rem;
         }
 
         @media (max-width: $xl) and (min-width: $lg) {
@@ -79,7 +86,7 @@
         }
     }
 
-    // Cols
+    // Cols 1-3 and Main class for links
     &-link {
         border-radius: $border-rad-inf;
         background-color: $bg-white;
@@ -195,72 +202,7 @@
         }
     }
 
-    //    Link Icons
-    // Layout
-    &-links-icons {
-        @media (min-width: $lg) {
-            width: 62.7%;
-        }
-    }
-
-    &-links-icons__elements {
-        row-gap: 25px;
-
-        .infrastructure-link {
-            height: 127px;
-
-            @media (max-width: $xxl) {
-                height: 100px;
-            }
-
-            @media (max-width: $xl) {
-                height: 84px;
-            }
-
-            @media (max-width: $md) {
-                height: 97px;
-            }
-        }
-
-        // Media infrastructure-links-icons__elements
-        @media (max-width: $xxl) {
-            row-gap: 15px;
-        }
-
-        @media (max-width: $xl) and (min-width: $md) {
-            div[class^="col"] {
-                padding-right: calc(var(--bs-gutter-x) * 0.4);
-                padding-left: calc(var(--bs-gutter-x) * 0.4);
-            }
-        }
-
-        @media (max-width: $md) and (min-width: $sm) {
-            div[class^="col"] {
-                padding-right: calc(var(--bs-gutter-x) * 0.2);
-                padding-left: calc(var(--bs-gutter-x) * 0.2);
-            }
-        }
-
-        @media (max-width: $sm) {
-            margin: 0;
-
-            justify-content: center;
-            margin-top: 15px;
-
-            div[class*="row-block"] {
-                padding-right: calc(var(--bs-gutter-x) * 0.2);
-                padding-left: calc(var(--bs-gutter-x) * 0.2);
-            }
-        }
-    }
-
-    // Content
-    &-link_icons {
-        @media (max-width: $sm) {
-            height: calc(100% - 0px) !important;
-        }
-    }
-
+    // Link Icons (4 - 8 cols)
     &-link__content_icons {
         align-items: start;
         @include column;
@@ -286,10 +228,23 @@
 
         @media (max-width: $sm) {
             flex-direction: row;
+            align-items: center;
+            justify-content: center;
 
-            padding: 10px;
+            padding: 7px;
 
             column-gap: 8px;
+        }
+    }
+
+    // Text Link Icons
+    &-link__content-txt_icons {
+        @media (min-width: $xxl) {
+            font-size: 1.15rem;
+        }
+
+        @media (max-width: $sm) {
+            font-size: 0.7rem;
         }
     }
 
@@ -330,14 +285,122 @@
                 border-radius: $border-rad-inf;
 
                 padding: 16px 13px;
-
-                margin: 0 auto;
             }
         }
     }
 
-    // Text
-    &-link__content-txt_icons {
+    // Content Link Icons
+    &-link_with-icons {
+        @media (max-width: $sm) {
+            height: calc(100% - 0px) !important;
+        }
+    }
+
+    // Link Icons (4 - 8 cols)
+    // Layout
+    &-links-icons {
+        @media (min-width: $lg) {
+            width: 62.7%;
+        }
+
+        @media (max-width: $lg) {
+            padding: 0 !important;
+        }
+    }
+
+    &-links-icons__elements {
+        row-gap: 25px;
+
+        .infrastructure-link {
+            height: 127px;
+
+            @media (max-width: $xxl) {
+                height: 100px;
+            }
+
+            @media (max-width: $xl) {
+                height: 84px;
+            }
+
+            @media (max-width: $md) {
+                height: 97px;
+            }
+        }
+
+        // Media infrastructure-links-icons__elements
+        @media (max-width: $xxl) {
+            row-gap: 15px;
+        }
+
+        @media (max-width: $lg) {
+            margin: 0;
+        }
+
+        @media (max-width: $xl) and (min-width: $md) {
+            div[class^="col"] {
+                padding-right: calc(var(--bs-gutter-x) * 0.4);
+                padding-left: calc(var(--bs-gutter-x) * 0.4);
+            }
+        }
+
+        @media (max-width: $sm) {
+            justify-content: center;
+            margin-top: 15px;
+
+            div[class*="row-block-1"] {
+                padding-right: calc(var(--bs-gutter-x) * 0.4);
+                padding-left: calc(var(--bs-gutter-x) * 0.7);
+            }
+
+            div[class*="row-block-2"] {
+                padding-right: calc(var(--bs-gutter-x) * 1.2);
+                padding-left: calc(var(--bs-gutter-x) * 0.4);
+            }
+        }
+    }
+
+    // Bottom cols
+    &-link_bottom {
+        height: calc(100% - 0px);
+    }
+
+    &-link__content_bottom {
+        @include column;
+
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        left: unset;
+        right: unset;
+        bottom: unset;
+        padding: 22px 20px;
+
+        height: auto;
+        width: 100%;
+
+        @media (max-width: $xl) {
+            padding: 16px 20px;
+        }
+
+        @media (max-width: $lg) {
+            padding: 13px 20px;
+        }
+
+        @media (max-width: $md) {
+            padding: 16px 20px;
+        }
+
+        @media (max-width: $sm) {
+            padding: 11px;
+            column-gap: 8px;
+        }
+    }
+
+    // Text Link Icons
+    &-link__content-txt_bottom {
+        text-align: center;
+
         @media (min-width: $xxl) {
             font-size: 1.15rem;
         }

@@ -11,7 +11,7 @@ if (!empty($attributes['grid-blocks-url'])) :
 
             <div class="infrastructure__content">
 
-                <div class="infrastructure__top main-top">
+                <div class="infrastructure__top main-top row">
                     <div class="infrastructure__top-number">06</div>
 
                     <?php if (!empty($attributes['grid-blocks-title'])) : ?>
@@ -49,6 +49,7 @@ if (!empty($attributes['grid-blocks-url'])) :
 
                 </div>
             </div>
+        </div>
 
     </section>
 <?php
