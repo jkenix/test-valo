@@ -5,9 +5,9 @@
 
 ## Порядок запуска проекта:   
 1. Установить Wordpress (Не ниже версии 3.7.1)   
-2. В директорию *wordpress/wp-content/themes/* положить папку *test-valo* из архива **test-valo.zip**.    
-3. В директорию *wordpress/wp-content/* положить папку *plugins* из архива **test-valo-plugins.zip**.  
-3. В директорию *wordpress/wp-content/* положить папку *uploads* из архива **test-valo-uploads.zip**.   
+2. **Склонировать репозиторий** и в директорию *wordpress/wp-content/themes/* положить папку *test-valo* с **содержимым репозитория**.    
+3. В директорию *wordpress/wp-content/* положить папку *plugins* из архива **test-valo-plugins.zip** в папке ***web***.  
+3. В директорию *wordpress/wp-content/* положить папку *uploads* из архива **test-valo-uploads.zip** в папке ***web***.   
 4. Через phpMyAdmin или консоль импортировать БД *14022025.sql* из директории **web/** проекта в уже вашу существующую БД.   
 6. Активировать все плагины. (Query Monitor можно не включать).   
 7. Запустить сайт через https://localhost/ или другой адрес локального сервера.   
